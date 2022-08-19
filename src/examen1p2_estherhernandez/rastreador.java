@@ -18,5 +18,10 @@ public class rastreador extends personajes {
     public String toString() {
         return super.toString()+"rastreador{" + '}';
     }
+
+    @Override
+    public void ataque() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
 }

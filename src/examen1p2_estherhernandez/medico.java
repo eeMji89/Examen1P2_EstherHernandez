@@ -21,5 +21,10 @@ public class medico extends personajes {
     public String toString() {
         return super.toString()+"medico{" + '}';
     }
+
+    @Override
+    public void ataque() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
 }

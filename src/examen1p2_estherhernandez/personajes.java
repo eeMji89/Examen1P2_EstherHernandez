@@ -4,7 +4,7 @@ package examen1p2_estherhernandez;
 /**
  * @author ELIZABETH HERNANDEZ
  */
-public class personajes {
+public abstract class personajes implements ataque{
     private String nombre;
     private int vida;
     private int escudo;

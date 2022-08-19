@@ -21,5 +21,10 @@ public class fortaleza extends personajes {
     public String toString() {
         return super.toString()+"fortaleza{" + '}';
     }
+
+    @Override
+    public void ataque() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
 }
