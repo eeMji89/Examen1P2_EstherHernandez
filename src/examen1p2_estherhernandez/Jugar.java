@@ -17,6 +17,38 @@ public class Jugar {
     private int ID;
     private String contra;
     private personajes p;
+
+    public Jugar() {
+    }
+
+    public ArrayList<armas> getArma() {
+        return arma;
+    }
+
+    public void setArma(ArrayList<armas> arma) {
+        this.arma = arma;
+    }
+
+    public ArrayList<jugadores> getJug() {
+        return jug;
+    }
+
+    @Override
+    public String toString() {
+        return "Jugdores{" + "j" + jug + '}';
+    }
+    
+    public void setJug(ArrayList<jugadores> jug) {
+        this.jug = jug;
+    }
+
+    public ArrayList<personajes> getPr() {
+        return pr;
+    }
+
+    public void setPr(ArrayList<personajes> pr) {
+        this.pr = pr;
+    }
     
     public void jugar (){
     pr.add(0,new medico("LifeLine",100,50,arma.get(0)));
