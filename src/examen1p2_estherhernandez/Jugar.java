@@ -2,6 +2,7 @@
 package examen1p2_estherhernandez;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Random;
 
 /**
@@ -13,6 +14,7 @@ public class Jugar {
     ArrayList <jugadores> jug = new ArrayList();
     ArrayList<personajes> pr = new ArrayList();
      Random r = new Random();
+     Date d = new Date();
     private String usuario;
     private int ID;
     private String contra;
@@ -98,14 +100,27 @@ for (int i = 3; i < 60; i++) {
 }
 return jug;
 }
-
+public int busqueda(int){
+    int b = 0;
+    for (int i = 0; i < 10; i++) {
+        
+    }
+    return b;
+}
 
 public void inicio(){
     jugador();
+    int contj = jug.size();
     String entrada = "";
     for (jugadores object : jug) {
         entrada+= "El jugador ["+ jug.get(ID).getID()+"]"+jug.get(ID).getUsuario()+" ha ingresado a la partida\n";
     }
     System.out.println(entrada);
+    
+    while()
+    
+    
+    
+    
 }
 }

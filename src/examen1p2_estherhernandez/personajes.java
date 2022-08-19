@@ -33,6 +33,9 @@ public abstract class personajes implements ataque{
     }
 
     public void setVida(int vida) {
+        if (vida >=50&& vida<=100) {
+             this.vida = vida;
+        }
         this.vida = vida;
     }
 

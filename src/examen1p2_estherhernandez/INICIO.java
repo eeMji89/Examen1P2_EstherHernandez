@@ -57,14 +57,16 @@ public class INICIO extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         cbtipo = new javax.swing.JComboBox<>();
         cbarma = new javax.swing.JComboBox<>();
-        cescudo = new javax.swing.JTextField();
+        jtescudo = new javax.swing.JTextField();
         jtnombre = new javax.swing.JTextField();
         jtvida = new javax.swing.JTextField();
-        jButton3 = new javax.swing.JButton();
+        jbcp = new javax.swing.JButton();
         jtna = new javax.swing.JTextField();
         jtap = new javax.swing.JTextField();
         jButton4 = new javax.swing.JButton();
         jtda = new javax.swing.JTextField();
+        jtatacar = new javax.swing.JTextField();
+        jButton5 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         usuario = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
@@ -80,7 +82,6 @@ public class INICIO extends javax.swing.JFrame {
 
         jLabel4.setText("Seleccionar Personaje");
 
-        personajecb.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         personajecb.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 personajecbItemStateChanged(evt);
@@ -174,15 +175,18 @@ public class INICIO extends javax.swing.JFrame {
 
         cbarma.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        cescudo.setText("jTextField1");
+        jtnombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtnombreActionPerformed(evt);
+            }
+        });
 
-        jtnombre.setText("jTextField2");
-
-        jButton3.setText("Crear Personaje");
-
-        jtna.setText("jTextField4");
-
-        jtap.setText("jTextField5");
+        jbcp.setText("Crear Personaje");
+        jbcp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbcpActionPerformed(evt);
+            }
+        });
 
         jButton4.setText("Crear Arma");
 
@@ -195,7 +199,7 @@ public class INICIO extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(cescudo, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jtescudo, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(cbarma, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
@@ -239,7 +243,7 @@ public class INICIO extends javax.swing.JFrame {
                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(cbtipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jButton3))
+                    .addComponent(jbcp))
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
@@ -262,8 +266,8 @@ public class INICIO extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cbarma, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cescudo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3))
+                    .addComponent(jtescudo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jbcp))
                 .addGap(29, 29, 29)
                 .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -285,13 +289,21 @@ public class INICIO extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Crear", jPanel3);
 
+        jButton5.setText("Atacar");
+
         javax.swing.GroupLayout jf2Layout = new javax.swing.GroupLayout(jf2.getContentPane());
         jf2.getContentPane().setLayout(jf2Layout);
         jf2Layout.setHorizontalGroup(
             jf2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jf2Layout.createSequentialGroup()
                 .addGap(43, 43, 43)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jf2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jf2Layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(jtatacar, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(35, 35, 35)
+                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(187, Short.MAX_VALUE))
         );
         jf2Layout.setVerticalGroup(
@@ -299,7 +311,11 @@ public class INICIO extends javax.swing.JFrame {
             .addGroup(jf2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(58, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jf2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jtatacar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton5))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -420,11 +436,26 @@ public class INICIO extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_personajecbItemStateChanged
-
+    
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         Jugar temp = (Jugar)personajecb.getSelectedItem();
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jtnombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtnombreActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jtnombreActionPerformed
+        
+    private void jbcpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbcpActionPerformed
+        // TODO add your handling code here:
+       (personajes)cbtipo.getSelectedItem().equals(());
+        if (rootPaneCheckingEnabled) {
+            
+        
+        (Jugar)pr.add(new o(jtnombre.getText(),jtvida.getText(),jtescudo.getText(),cbarma.getSelectedItem()));
+        
+    }//GEN-LAST:event_jbcpActionPerformed
 
     /**
      * @param args the command line arguments
@@ -470,12 +501,11 @@ ArrayList<personajes> pr = new ArrayList();
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> cbarma;
     private javax.swing.JComboBox<String> cbtipo;
-    private javax.swing.JTextField cescudo;
     private javax.swing.JTextField contra;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -495,9 +525,12 @@ ArrayList<personajes> pr = new ArrayList();
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JButton jbcp;
     private javax.swing.JFrame jf2;
     private javax.swing.JTextField jtap;
+    private javax.swing.JTextField jtatacar;
     private javax.swing.JTextField jtda;
+    private javax.swing.JTextField jtescudo;
     private javax.swing.JTextField jtna;
     private javax.swing.JTextField jtnombre;
     private javax.swing.JTextField jtvida;
