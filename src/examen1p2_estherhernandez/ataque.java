@@ -8,4 +8,8 @@ package examen1p2_estherhernandez;
 public interface ataque {
     
     public void ataque();
+    
+    public double dan(int dan);
+    public double vida(int vida);
+    public double precision(int pr);
 }

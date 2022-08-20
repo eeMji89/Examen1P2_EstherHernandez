@@ -102,19 +102,18 @@ for (int i = 3; i < 60; i++) {
     int cont = 0;
 
     jug.add(i,new jugadores(usuario,Id(),contra,pr.get(1+r.nextInt(2))));
-
+    
 }
+
 return jug;
 }
+
+
 int b = jug.size();
-public int busqueda(int p,int b){
-    for (int i = 0; i < jug.size(); i++) {
-        b = jug.size()/2;
-        if (b<p) {
-            
-        }
-    }
-    return b;
+public int busqueda(ArrayList a,int p){
+    
+    
+    return busqueda(a,p);
 }
 
 public void inicio(){

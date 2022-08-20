@@ -3,13 +3,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package examen1p2_estherhernandez;
-
+import java.util.Random;
 /**
  *
  * @author ELIZABETH HERNANDEZ
  */
 public class medico extends personajes {
-
+Random rd = new Random();
     public medico() {
     }
 
@@ -24,7 +24,22 @@ public class medico extends personajes {
 
     @Override
     public void ataque() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-    
+
+    @Override
+    public double dan(int dan) {
+        
+    }
+
+    @Override
+    public double vida(int vida) {
+        vida = vida +(vida*(1+rd.nextInt(10)));
+        return vida;
+    }
+
+    @Override
+    public double precision(int pr) {
+    }
+
+   
 }
