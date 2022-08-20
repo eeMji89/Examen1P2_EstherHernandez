@@ -28,17 +28,19 @@ Random rd = new Random();
 
     @Override
     public double dan(int dan) {
-        
+        dan = dan -(dan*5/100);
+        return dan;
     }
 
     @Override
     public double vida(int vida) {
-        vida = vida +(vida*(1+rd.nextInt(10)));
-        return vida;
+        double vidat = vida +((vida*(1+rd.nextInt(10))/100));
+        return vidat;
     }
 
     @Override
     public double precision(int pr) {
+        return pr;
     }
 
    
