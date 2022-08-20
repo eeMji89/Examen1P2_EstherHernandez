@@ -52,19 +52,7 @@ public class Jugar {
         this.pr = pr;
     }
     
-    public void jugar (){
-    pr.add(0,new medico("LifeLine",100,50,arma.get(0)));
-    pr.add(1,new rastreador("Vantaje",100,50,arma.get(1)));
-    pr.add(2,new fortaleza("Gibby",125,50,arma.get(2)));
-        //-----------------------------------------------------------
-    arma.add(0,new armas("FlatLine",10,80));
-    arma.add(1,new armas("Carabina",15,90));
-    arma.add(2,new armas("PeaceFinder",30,40));
-    //--------------------------------------------------------------
-    jug.add(0,new jugadores("Lechuga",543,"contraseña",pr.get(0)));
-    jug.add(1,new jugadores("Loco Bryan",23,"contraseña",pr.get(1)));
-    jug.add(2,new jugadores("Lechuga",2,"contraseña",pr.get(2)));
-}     
+ 
 
 public String contrasena(){
     String contra = "";
