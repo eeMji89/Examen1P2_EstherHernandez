@@ -17,16 +17,36 @@ public class INICIO extends javax.swing.JFrame {
      */
     public INICIO() {
         initComponents();
-        
+       pr.add(0,new medico("LifeLine",100,50,arma.get(0)));
+        pr.add(1,new rastreador("Vantaje",100,50,arma.get(1)));
+    pr.add(2,new fortaleza("Gibby",125,50,arma.get(2)));
+        //-----------------------------------------------------------
+    arma.add(0,new armas("FlatLine",10,80));
+    arma.add(1,new armas("Carabina",15,90));
+    arma.add(2,new armas("PeaceFinder",30,40));
+    //--------------------------------------------------------------
+    jug.add(0,new jugadores("Lechuga",543,"contraseña",pr.get(0)));
+    jug.add(1,new jugadores("Loco Bryan",23,"contraseña",pr.get(1)));
+    jug.add(2,new jugadores("Lechuga",2,"contraseña",pr.get(2)));
          DefaultComboBoxModel modelo
                 = (DefaultComboBoxModel) personajecb.getModel();
-         for (int i = 0; i < jug.size(); i++) {
-             modelo.addElement(jg.toString());
-        }
-        
+                    modelo.addElement(jug.get(0));
+                    modelo.addElement(jug.get(1));
+                    modelo.addElement(jug.get(2));
+                    
          personajecb.setModel(modelo);
-    }
-
+    
+    DefaultComboBoxModel modelot
+                = (DefaultComboBoxModel) personajecb.getModel();
+         
+             modelot.addElement("Fortaleza ");
+             modelot.addElement("Medico ");
+             modelot.addElement("rastreador");
+        
+        
+         personajecb.setModel(modelot);
+   
+}
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -37,14 +57,14 @@ public class INICIO extends javax.swing.JFrame {
     private void initComponents() {
 
         jf2 = new javax.swing.JFrame();
-        jTabbedPane1 = new javax.swing.JTabbedPane();
+        jtjugar = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         personajecb = new javax.swing.JComboBox<>();
         jButton2 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        jtjugart = new javax.swing.JTextArea();
         jtatacar = new javax.swing.JTextField();
         jButton5 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
@@ -79,6 +99,12 @@ public class INICIO extends javax.swing.JFrame {
         jf2.setMinimumSize(new java.awt.Dimension(500, 500));
         jf2.setPreferredSize(new java.awt.Dimension(600, 600));
         jf2.setSize(new java.awt.Dimension(500, 500));
+
+        jtjugar.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jtjugarStateChanged(evt);
+            }
+        });
 
         jLabel4.setText("Seleccionar Personaje");
 
@@ -125,14 +151,14 @@ public class INICIO extends javax.swing.JFrame {
                 .addComponent(personajecb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton2)
-                .addContainerGap(184, Short.MAX_VALUE))
+                .addContainerGap(465, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("Seleccionar", jPanel1);
+        jtjugar.addTab("Seleccionar", jPanel1);
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        jtjugart.setColumns(20);
+        jtjugart.setRows(5);
+        jScrollPane1.setViewportView(jtjugart);
 
         jButton5.setText("Atacar");
 
@@ -155,7 +181,7 @@ public class INICIO extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 521, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jtatacar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -163,7 +189,7 @@ public class INICIO extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jTabbedPane1.addTab("Jugar", jPanel2);
+        jtjugar.addTab("Jugar", jPanel2);
 
         jLabel5.setText("Nombre");
 
@@ -182,6 +208,12 @@ public class INICIO extends javax.swing.JFrame {
         jLabel12.setText("Arma");
 
         jLabel13.setText("Tipo");
+
+        cbtipo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbtipoActionPerformed(evt);
+            }
+        });
 
         jtnombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -300,7 +332,7 @@ public class INICIO extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("Crear", jPanel3);
+        jtjugar.addTab("Crear", jPanel3);
 
         javax.swing.GroupLayout jf2Layout = new javax.swing.GroupLayout(jf2.getContentPane());
         jf2.getContentPane().setLayout(jf2Layout);
@@ -308,14 +340,14 @@ public class INICIO extends javax.swing.JFrame {
             jf2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jf2Layout.createSequentialGroup()
                 .addGap(43, 43, 43)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 427, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jtjugar, javax.swing.GroupLayout.PREFERRED_SIZE, 427, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(130, Short.MAX_VALUE))
         );
         jf2Layout.setVerticalGroup(
             jf2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jf2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTabbedPane1))
+                .addComponent(jtjugar))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -467,6 +499,22 @@ public class INICIO extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jbcpMouseClicked
 
+    private void cbtipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbtipoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbtipoActionPerformed
+
+    private void jtjugarStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jtjugarStateChanged
+        // TODO add your handling code here:
+        if (jtjugar.getSelectedIndex()== 2) {
+           
+            jtjugart.setText("");
+            for (jugadores temp : jug) {
+                jtjugart.append(temp.toString()+"\n");
+            }
+        }
+        
+    }//GEN-LAST:event_jtjugarStateChanged
+
     /**
      * @param args the command line arguments
      */
@@ -533,14 +581,14 @@ ArrayList<personajes> pr = new ArrayList();
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JButton jbcp;
     private javax.swing.JFrame jf2;
     private javax.swing.JTextField jtap;
     private javax.swing.JTextField jtatacar;
     private javax.swing.JTextField jtda;
     private javax.swing.JTextField jtescudo;
+    private javax.swing.JTabbedPane jtjugar;
+    private javax.swing.JTextArea jtjugart;
     private javax.swing.JTextField jtna;
     private javax.swing.JTextField jtnombre;
     private javax.swing.JTextField jtvida;

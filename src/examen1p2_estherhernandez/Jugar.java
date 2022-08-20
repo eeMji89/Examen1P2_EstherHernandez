@@ -35,8 +35,8 @@ public class Jugar {
         return jug;
     }
 
-    @Override
-    public String toString() {
+    
+    public String JugtoString() {
         return "Jugdores{" + "j" + jug + '}';
     }
     
@@ -54,8 +54,8 @@ public class Jugar {
     
     public void jugar (){
     pr.add(0,new medico("LifeLine",100,50,arma.get(0)));
-    pr.add(0,new rastreador("Vantaje",100,50,arma.get(1)));
-    pr.add(0,new fortaleza("Gibby",125,50,arma.get(2)));
+    pr.add(1,new rastreador("Vantaje",100,50,arma.get(1)));
+    pr.add(2,new fortaleza("Gibby",125,50,arma.get(2)));
         //-----------------------------------------------------------
     arma.add(0,new armas("FlatLine",10,80));
     arma.add(1,new armas("Carabina",15,90));
@@ -67,8 +67,26 @@ public class Jugar {
 }     
 
 public String contrasena(){
+    String contra = "";
+   
+    int temp = 0;
+    for (int i = 0; i < 10; i++) {
+        temp = 97+r.nextInt(122);
+        contra += (char) temp;
+    }
     
     return contra;
+}
+public String usuario(){
+    String user = "";
+   
+    int temp = 0;
+    for (int i = 0; i < 10; i++) {
+        temp = 97+r.nextInt(122);
+        user += (char) temp;
+    }
+    
+    return user;
 }
 public int Id(){
     int temp;
