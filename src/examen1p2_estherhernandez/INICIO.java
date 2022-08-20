@@ -17,17 +17,8 @@ public class INICIO extends javax.swing.JFrame {
      */
     public INICIO() {
         initComponents();
-       pr.add(0,new medico("LifeLine",100,50,arma.get(0)));
-        pr.add(1,new rastreador("Vantaje",100,50,arma.get(1)));
-    pr.add(2,new fortaleza("Gibby",125,50,arma.get(2)));
-        //-----------------------------------------------------------
-    arma.add(0,new armas("FlatLine",10,80));
-    arma.add(1,new armas("Carabina",15,90));
-    arma.add(2,new armas("PeaceFinder",30,40));
-    //--------------------------------------------------------------
-    jug.add(0,new jugadores("Lechuga",543,"contraseña",pr.get(0)));
-    jug.add(1,new jugadores("Loco Bryan",23,"contraseña",pr.get(1)));
-    jug.add(2,new jugadores("Lechuga",2,"contraseña",pr.get(2)));
+        jug = jugar();
+    
          DefaultComboBoxModel modelo
                 = (DefaultComboBoxModel) personajecb.getModel();
                     modelo.addElement(jug.get(0));
@@ -36,15 +27,15 @@ public class INICIO extends javax.swing.JFrame {
                     
          personajecb.setModel(modelo);
     
-    DefaultComboBoxModel modelot
-                = (DefaultComboBoxModel) personajecb.getModel();
+   DefaultComboBoxModel modelot
+                = (DefaultComboBoxModel) cbtipo.getModel();
          
              modelot.addElement("Fortaleza ");
              modelot.addElement("Medico ");
              modelot.addElement("rastreador");
         
         
-         personajecb.setModel(modelot);
+         cbtipo.setModel(modelot);
    
 }
     /**
@@ -61,7 +52,7 @@ public class INICIO extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         personajecb = new javax.swing.JComboBox<>();
-        jButton2 = new javax.swing.JButton();
+        seleccion = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jtjugart = new javax.swing.JTextArea();
@@ -119,10 +110,15 @@ public class INICIO extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("Seleccionar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        seleccion.setText("Seleccionar");
+        seleccion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                seleccionMouseClicked(evt);
+            }
+        });
+        seleccion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                seleccionActionPerformed(evt);
             }
         });
 
@@ -139,7 +135,7 @@ public class INICIO extends javax.swing.JFrame {
                             .addComponent(personajecb, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(96, 96, 96)
-                        .addComponent(jButton2)))
+                        .addComponent(seleccion)))
                 .addContainerGap(172, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -150,7 +146,7 @@ public class INICIO extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(personajecb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton2)
+                .addComponent(seleccion)
                 .addContainerGap(465, Short.MAX_VALUE))
         );
 
@@ -469,10 +465,10 @@ public class INICIO extends javax.swing.JFrame {
         
     }//GEN-LAST:event_personajecbItemStateChanged
     
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void seleccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seleccionActionPerformed
         // TODO add your handling code here:
         Jugar temp = (Jugar)personajecb.getSelectedItem();
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_seleccionActionPerformed
 
     private void jtnombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtnombreActionPerformed
         // TODO add your handling code here:
@@ -515,6 +511,13 @@ public class INICIO extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jtjugarStateChanged
 
+    private void seleccionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_seleccionMouseClicked
+        // TODO add your handling code here:
+        j = (jugadores)personajecb.getSelectedItem();
+        
+        
+    }//GEN-LAST:event_seleccionMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -549,6 +552,23 @@ public class INICIO extends javax.swing.JFrame {
             }
         });
     }
+    public ArrayList jugar(){
+        arma.add(0,new armas("FlatLine",10,80));
+    arma.add(1,new armas("Carabina",15,90));
+    arma.add(2,new armas("PeaceFinder",30,40));
+    //--------------------------------------------------------------
+        
+    pr.add(0,new medico("LifeLine",100,50,arma.get(0)));
+    pr.add(1,new rastreador("Vantaje",100,50,arma.get(1)));
+    pr.add(2,new fortaleza("Gibby",125,50,arma.get(2)));
+        //-----------------------------------------------------------
+    
+    jug.add(0,new jugadores("Lechuga",543,"contraseña",pr.get(0)));
+    jug.add(1,new jugadores("Loco Bryan",23,"contraseña",pr.get(1)));
+    jug.add(2,new jugadores("Dr. Nuila",2,"contraseña",pr.get(2)));
+    
+    return jug;
+    }
     jugadores j;
     personajes p;
     Jugar jg;
@@ -561,7 +581,6 @@ ArrayList<personajes> pr = new ArrayList();
     private javax.swing.JComboBox<String> cbtipo;
     private javax.swing.JTextField contra;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
@@ -593,6 +612,7 @@ ArrayList<personajes> pr = new ArrayList();
     private javax.swing.JTextField jtnombre;
     private javax.swing.JTextField jtvida;
     private javax.swing.JComboBox<String> personajecb;
+    private javax.swing.JButton seleccion;
     private javax.swing.JTextField usuario;
     // End of variables declaration//GEN-END:variables
 }
