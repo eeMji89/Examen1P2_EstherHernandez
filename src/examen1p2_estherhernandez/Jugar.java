@@ -100,10 +100,13 @@ for (int i = 3; i < 60; i++) {
 }
 return jug;
 }
-public int busqueda(int){
-    int b = 0;
-    for (int i = 0; i < 10; i++) {
-        
+int b = jug.size();
+public int busqueda(int p,int b){
+    for (int i = 0; i < jug.size(); i++) {
+        b = jug.size()/2;
+        if (b<p) {
+            
+        }
     }
     return b;
 }
@@ -117,10 +120,10 @@ public void inicio(){
     }
     System.out.println(entrada);
     
-    while()
-    
-    
-    
+   // while(){
+        
+   // }
+
     
 }
 }
